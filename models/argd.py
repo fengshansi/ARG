@@ -204,16 +204,18 @@ class Trainer():
         )
 
         self.model.load_state_dict(torch.load(os.path.join(self.save_path, 'parameter_bert.pkl')))
-        future_results, label, pred, id, ae, acc = self.predict(test_future_loader)
+        test_future_results, label, pred, id, ae, acc = self.predict(test_future_loader)
 
-        writer.add_scalars('month_'+str(self.config['month'])+'/test', future_results)
+        writer.add_scalars('month_'+str(self.config['month'])+'/test', test_future_results)
         
         if(logger):
             logger.info("start testing......")
-            logger.info("test score: {}.".format(future_results))
-            logger.info("lr: {}, avg test score: {}.\n\n".format(self.config['lr'], future_results['metric']))
-        print('test results:', future_results)
-        return future_results, os.path.join(self.save_path, 'parameter_bert.pkl'), epoch
+            logger.info("test score: {}.".format(test_future_results))
+            logger.info("lr: {}, avg test score: {}.\n\n".format(self.config['lr'], test_future_results['metric']))
+        print('test results:', test_future_results)
+
+        val_future_results, label, pred, id, ae, acc = self.predict(val_loader)
+        return val_future_results,test_future_results, os.path.join(self.save_path, 'parameter_bert.pkl'), epoch
 
 
     def test(self, dataloader):

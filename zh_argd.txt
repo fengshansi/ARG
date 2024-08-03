@@ -1,0 +1,22 @@
+lr: 0.0005; model name: ARG-D; batchsize: 64; epoch: 50; gpu: 1;
+data_type: rationale; data_path: /home/tzh/ARG/data/zh; data_name: zh-argd;
+before in config
+{'use_cuda': True, 'seed': 3759, 'batchsize': 64, 'max_len': 170, 'early_stop': 5, 'language': 'ch', 'root_path': '/home/tzh/ARG/data/zh', 'weight_decay': 5e-05, 'model': {'mlp': {'dims': [384], 'dropout': 0.2}, 'llm_judgment_predictor_weight': 1.8, 'rationale_usefulness_evaluator_weight': 2.2, 'kd_loss_weight': 15.0}, 'emb_dim': 768, 'co_attention_dim': 300, 'lr': 0.0005, 'epoch': 50, 'model_name': 'ARG-D', 'save_log_dir': './logs', 'save_param_dir': './param_model', 'param_log_dir': './logs/param', 'tensorboard_dir': './logs/tensorlog', 'bert_path': '/home/tzh/model/chinese-bert-wwm-ext', 'data_type': 'rationale', 'data_name': 'zh-argd', 'eval_mode': False, 'teacher_path': './param_model/ARG_zh-arg/1/parameter_bert.pkl', 'month': 1}
+{'lr': [0.0005]}
+
+
+
+==================== start training ====================
+----- model initiating finish -----
+time cost in model and data loading: 46.25724172592163s
+---------- epoch 0 ----------
+----- in val progress... -----
+current {'auc': 0.8624061871568959, 'spauc': 0.6370644636362316, 'metric': 0.7650752236307155, 'f1_real': 0.7714570858283434, 'f1_fake': 0.7586933614330874, 'recall': 0.7919090940954316, 'recall_real': 0.659556313993174, 'recall_fake': 0.9242618741976893, 'precision': 0.7862590869251391, 'precision_real': 0.9290865384615384, 'precision_fake': 0.6434316353887399, 'acc': 0.7652485904664275}
+Max {'auc': 0.8624061871568959, 'spauc': 0.6370644636362316, 'metric': 0.7650752236307155, 'f1_real': 0.7714570858283434, 'f1_fake': 0.7586933614330874, 'recall': 0.7919090940954316, 'recall_real': 0.659556313993174, 'recall_fake': 0.9242618741976893, 'precision': 0.7862590869251391, 'precision_real': 0.9290865384615384, 'precision_fake': 0.6434316353887399, 'acc': 0.7652485904664275}
+
+---------- epoch 1 ----------
+----- in val progress... -----
+current {'auc': 0.8448917181824952, 'spauc': 0.6082798574858769, 'metric': 0.7614197499209086, 'f1_real': 0.7690014903129657, 'f1_fake': 0.7538380095288514, 'recall': 0.7872009270658542, 'recall_real': 0.6604095563139932, 'recall_fake': 0.9139922978177151, 'precision': 0.7808871892106137, 'precision_real': 0.920332936979786, 'precision_fake': 0.6414414414414414, 'acc': 0.7616606868272681}
+Max {'auc': 0.8624061871568959, 'spauc': 0.6370644636362316, 'metric': 0.7650752236307155, 'f1_real': 0.7714570858283434, 'f1_fake': 0.7586933614330874, 'recall': 0.7919090940954316, 'recall_real': 0.659556313993174, 'recall_fake': 0.9242618741976893, 'precision': 0.7862590869251391, 'precision_real': 0.9290865384615384, 'precision_fake': 0.6434316353887399, 'acc': 0.7652485904664275}
+
+---------- epoch 2 ----------

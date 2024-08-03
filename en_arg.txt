@@ -1,0 +1,90 @@
+lr: 5e-05; model name: ARG; batchsize: 64; epoch: 50; gpu: 2;
+data_type: rationale; data_path: /home/tzh/ARG/data/en; data_name: en-arg;
+before in config
+{'use_cuda': True, 'seed': 3759, 'batchsize': 64, 'max_len': 170, 'early_stop': 5, 'language': 'en', 'root_path': '/home/tzh/ARG/data/en', 'weight_decay': 5e-05, 'model': {'mlp': {'dims': [384], 'dropout': 0.2}, 'llm_judgment_predictor_weight': 1.0, 'rationale_usefulness_evaluator_weight': 1.5, 'kd_loss_weight': 1}, 'emb_dim': 768, 'co_attention_dim': 300, 'lr': 5e-05, 'epoch': 50, 'model_name': 'ARG', 'save_log_dir': './logs', 'save_param_dir': './param_model', 'param_log_dir': './logs/param', 'tensorboard_dir': './logs/tensorlog', 'bert_path': '/home/tzh/model/bert-base-uncased', 'data_type': 'rationale', 'data_name': 'en-arg', 'eval_mode': False, 'teacher_path': None, 'month': 1}
+{'lr': [5e-05]}
+
+
+
+==================== start training ====================
+Some weights of the model checkpoint at /home/tzh/model/bert-base-uncased were not used when initializing BertModel: ['cls.predictions.transform.dense.weight', 'cls.predictions.decoder.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.bias', 'cls.seq_relationship.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.bias']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of the model checkpoint at /home/tzh/model/bert-base-uncased were not used when initializing BertModel: ['cls.predictions.transform.dense.weight', 'cls.predictions.decoder.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.bias', 'cls.seq_relationship.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.bias']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+time cost in model and data loading: 61.91238737106323s
+---------- epoch 0 ----------
+100%|███████████████████████████████████████████████████████████████████████████| 61/61 [00:32<00:00,  1.86it/s]
+----- in val progress... -----
+100%|███████████████████████████████████████████████████████████████████████████| 20/20 [00:08<00:00,  2.50it/s]
+/home/tzh/anaconda3/envs/ARG/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/tzh/anaconda3/envs/ARG/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+current {'auc': 0.851400604806621, 'spauc': 0.7300987627432419, 'metric': 0.4470486111111111, 'f1_real': 0.8940972222222222, 'f1_fake': 0.0, 'recall': 0.5, 'recall_real': 1.0, 'recall_fake': 0.0, 'precision': 0.4042386185243328, 'precision_real': 0.8084772370486656, 'precision_fake': 0.0, 'acc': 0.8084772370486656}
+Max {'auc': 0.851400604806621, 'spauc': 0.7300987627432419, 'metric': 0.4470486111111111, 'f1_real': 0.8940972222222222, 'f1_fake': 0.0, 'recall': 0.5, 'recall_real': 1.0, 'recall_fake': 0.0, 'precision': 0.4042386185243328, 'precision_real': 0.8084772370486656, 'precision_fake': 0.0, 'acc': 0.8084772370486656}
+
+---------- epoch 1 ----------
+100%|█████████████████████████████████████████████████████████████████████████████████| 61/61 [00:30<00:00,  2.02it/s]
+----- in val progress... -----
+100%|█████████████████████████████████████████████████████████████████████████████████| 20/20 [00:07<00:00,  2.50it/s]
+current {'auc': 0.8729826515995545, 'spauc': 0.7439624048183486, 'metric': 0.7260932619802436, 'f1_real': 0.9249658935879944, 'f1_fake': 0.5272206303724928, 'recall': 0.682213910552284, 'recall_real': 0.987378640776699, 'recall_fake': 0.3770491803278688, 'precision': 0.8730824066153408, 'precision_real': 0.8699743370402053, 'precision_fake': 0.8761904761904762, 'acc': 0.8704866562009419}
+Max {'auc': 0.8729826515995545, 'spauc': 0.7439624048183486, 'metric': 0.7260932619802436, 'f1_real': 0.9249658935879944, 'f1_fake': 0.5272206303724928, 'recall': 0.682213910552284, 'recall_real': 0.987378640776699, 'recall_fake': 0.3770491803278688, 'precision': 0.8730824066153408, 'precision_real': 0.8699743370402053, 'precision_fake': 0.8761904761904762, 'acc': 0.8704866562009419}
+
+---------- epoch 2 ----------
+100%|█████████████████████████████████████████████████████████████████████████████████| 61/61 [00:30<00:00,  2.01it/s]
+----- in val progress... -----
+100%|█████████████████████████████████████████████████████████████████████████████████| 20/20 [00:07<00:00,  2.50it/s]
+current {'auc': 0.8707703326436415, 'spauc': 0.746349799375089, 'metric': 0.7633771929824562, 'f1_real': 0.9219924812030075, 'f1_fake': 0.6047619047619048, 'recall': 0.7364594938723539, 'recall_real': 0.9524271844660194, 'recall_fake': 0.5204918032786885, 'precision': 0.8075167660208644, 'precision_real': 0.8934426229508197, 'precision_fake': 0.7215909090909091, 'acc': 0.869701726844584}
+Max {'auc': 0.8707703326436415, 'spauc': 0.746349799375089, 'metric': 0.7633771929824562, 'f1_real': 0.9219924812030075, 'f1_fake': 0.6047619047619048, 'recall': 0.7364594938723539, 'recall_real': 0.9524271844660194, 'recall_fake': 0.5204918032786885, 'precision': 0.8075167660208644, 'precision_real': 0.8934426229508197, 'precision_fake': 0.7215909090909091, 'acc': 0.869701726844584}
+
+---------- epoch 3 ----------
+100%|█████████████████████████████████████████████████████████████████████████████████| 61/61 [00:30<00:00,  2.02it/s]
+----- in val progress... -----
+100%|█████████████████████████████████████████████████████████████████████████████████| 20/20 [00:07<00:00,  2.51it/s]
+current {'auc': 0.8548742638866784, 'spauc': 0.754831332668772, 'metric': 0.7882643508408753, 'f1_real': 0.9245463228271251, 'f1_fake': 0.6519823788546255, 'recall': 0.7731816011459494, 'recall_real': 0.9398058252427185, 'recall_fake': 0.6065573770491803, 'precision': 0.8072681704260651, 'precision_real': 0.9097744360902256, 'precision_fake': 0.7047619047619048, 'acc': 0.8759811616954474}
+Max {'auc': 0.8548742638866784, 'spauc': 0.754831332668772, 'metric': 0.7882643508408753, 'f1_real': 0.9245463228271251, 'f1_fake': 0.6519823788546255, 'recall': 0.7731816011459494, 'recall_real': 0.9398058252427185, 'recall_fake': 0.6065573770491803, 'precision': 0.8072681704260651, 'precision_real': 0.9097744360902256, 'precision_fake': 0.7047619047619048, 'acc': 0.8759811616954474}
+
+---------- epoch 4 ----------
+100%|█████████████████████████████████████████████████████████████████████████████████| 61/61 [00:30<00:00,  2.02it/s]
+----- in val progress... -----
+100%|█████████████████████████████████████████████████████████████████████████████████| 20/20 [00:07<00:00,  2.51it/s]
+current {'auc': 0.8651201655260224, 'spauc': 0.7506219791082034, 'metric': 0.7846153846153845, 'f1_real': 0.923076923076923, 'f1_fake': 0.646153846153846, 'recall': 0.7701615470316727, 'recall_real': 0.9378640776699029, 'recall_fake': 0.6024590163934426, 'precision': 0.8027156442688804, 'precision_real': 0.9087488240827846, 'precision_fake': 0.6966824644549763, 'acc': 0.8736263736263736}
+Max {'auc': 0.8548742638866784, 'spauc': 0.754831332668772, 'metric': 0.7882643508408753, 'f1_real': 0.9245463228271251, 'f1_fake': 0.6519823788546255, 'recall': 0.7731816011459494, 'recall_real': 0.9398058252427185, 'recall_fake': 0.6065573770491803, 'precision': 0.8072681704260651, 'precision_real': 0.9097744360902256, 'precision_fake': 0.7047619047619048, 'acc': 0.8759811616954474}
+
+---------- epoch 5 ----------
+100%|█████████████████████████████████████████████████████████████████████████████████| 61/61 [00:30<00:00,  2.02it/s]
+----- in val progress... -----
+100%|█████████████████████████████████████████████████████████████████████████████████| 20/20 [00:07<00:00,  2.50it/s]
+current {'auc': 0.8482333280280121, 'spauc': 0.7499308912101996, 'metric': 0.7729955474405791, 'f1_real': 0.9137596899224806, 'f1_fake': 0.6322314049586776, 'recall': 0.7712915804551965, 'recall_real': 0.9155339805825242, 'recall_fake': 0.6270491803278688, 'precision': 0.7747461315280464, 'precision_real': 0.9119922630560928, 'precision_fake': 0.6375, 'acc': 0.8602825745682888}
+Max {'auc': 0.8548742638866784, 'spauc': 0.754831332668772, 'metric': 0.7882643508408753, 'f1_real': 0.9245463228271251, 'f1_fake': 0.6519823788546255, 'recall': 0.7731816011459494, 'recall_real': 0.9398058252427185, 'recall_fake': 0.6065573770491803, 'precision': 0.8072681704260651, 'precision_real': 0.9097744360902256, 'precision_fake': 0.7047619047619048, 'acc': 0.8759811616954474}
+
+---------- epoch 6 ----------
+100%|█████████████████████████████████████████████████████████████████████████████████| 61/61 [00:30<00:00,  2.02it/s]
+----- in val progress... -----
+100%|█████████████████████████████████████████████████████████████████████████████████| 20/20 [00:08<00:00,  2.50it/s]
+current {'auc': 0.8451058411586823, 'spauc': 0.7433132010353753, 'metric': 0.7626774847870184, 'f1_real': 0.9243697478991597, 'f1_fake': 0.6009852216748769, 'recall': 0.7305825242718447, 'recall_real': 0.9611650485436893, 'recall_fake': 0.5, 'precision': 0.8216870947686296, 'precision_real': 0.8902877697841727, 'precision_fake': 0.7530864197530864, 'acc': 0.8728414442700158}
+Max {'auc': 0.8548742638866784, 'spauc': 0.754831332668772, 'metric': 0.7882643508408753, 'f1_real': 0.9245463228271251, 'f1_fake': 0.6519823788546255, 'recall': 0.7731816011459494, 'recall_real': 0.9398058252427185, 'recall_fake': 0.6065573770491803, 'precision': 0.8072681704260651, 'precision_real': 0.9097744360902256, 'precision_fake': 0.7047619047619048, 'acc': 0.8759811616954474}
+
+---------- epoch 7 ----------
+100%|█████████████████████████████████████████████████████████████████████████████████| 61/61 [00:30<00:00,  2.02it/s]
+----- in val progress... -----
+100%|█████████████████████████████████████████████████████████████████████████████████| 20/20 [00:07<00:00,  2.51it/s]
+current {'auc': 0.8541878879516155, 'spauc': 0.7441299412784707, 'metric': 0.7501433183477657, 'f1_real': 0.8972332015810277, 'f1_fake': 0.6030534351145037, 'recall': 0.7645471908324049, 'recall_real': 0.8815533980582524, 'recall_fake': 0.6475409836065574, 'precision': 0.7388832997987927, 'precision_real': 0.9134808853118712, 'precision_fake': 0.5642857142857143, 'acc': 0.8367346938775511}
+Max {'auc': 0.8548742638866784, 'spauc': 0.754831332668772, 'metric': 0.7882643508408753, 'f1_real': 0.9245463228271251, 'f1_fake': 0.6519823788546255, 'recall': 0.7731816011459494, 'recall_real': 0.9398058252427185, 'recall_fake': 0.6065573770491803, 'precision': 0.8072681704260651, 'precision_real': 0.9097744360902256, 'precision_fake': 0.7047619047619048, 'acc': 0.8759811616954474}
+
+---------- epoch 8 ----------
+100%|█████████████████████████████████████████████████████████████████████████████████| 61/61 [00:30<00:00,  2.02it/s]
+----- in val progress... -----
+100%|█████████████████████████████████████████████████████████████████████████████████| 20/20 [00:07<00:00,  2.51it/s]
+current {'auc': 0.8345018303358268, 'spauc': 0.729700863650452, 'metric': 0.7492125984251969, 'f1_real': 0.9, 'f1_fake': 0.5984251968503937, 'recall': 0.7571064777972306, 'recall_real': 0.8912621359223301, 'recall_fake': 0.6229508196721312, 'precision': 0.7423342334233424, 'precision_real': 0.9089108910891089, 'precision_fake': 0.5757575757575758, 'acc': 0.8398744113029827}
+Max {'auc': 0.8548742638866784, 'spauc': 0.754831332668772, 'metric': 0.7882643508408753, 'f1_real': 0.9245463228271251, 'f1_fake': 0.6519823788546255, 'recall': 0.7731816011459494, 'recall_real': 0.9398058252427185, 'recall_fake': 0.6065573770491803, 'precision': 0.8072681704260651, 'precision_real': 0.9097744360902256, 'precision_fake': 0.7047619047619048, 'acc': 0.8759811616954474}
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 20/20 [00:07<00:00,  2.53it/s]
+test results: {'auc': 0.8563910590277779, 'spauc': 0.7537727029914529, 'metric': 0.787189292337, 'f1_real': 0.9240445089501692, 'f1_fake': 0.6503340757238307, 'recall': 0.778274405715812, 'recall_real': 0.9326171875, 'recall_fake': 0.6239316239316239, 'precision': 0.7973488818033847, 'precision_real': 0.9156279961649089, 'precision_fake': 0.6790697674418604, 'acc': 0.8751987281399046}
+100%|█████████████████████████████████████████████████████████████████████████████████| 20/20 [00:07<00:00,  2.51it/s]
+best model path: ./param_model/ARG_en-arg/1/parameter_bert.pkl
+best macro f1: 0.7882643508408753
+best_val_metric: {'auc': 0.8548742638866784, 'spauc': 0.754831332668772, 'metric': 0.7882643508408753, 'f1_real': 0.9245463228271251, 'f1_fake': 0.6519823788546255, 'recall': 0.7731816011459494, 'recall_real': 0.9398058252427185, 'recall_fake': 0.6065573770491803, 'precision': 0.8072681704260651, 'precision_real': 0.9097744360902256, 'precision_fake': 0.7047619047619048, 'acc': 0.8759811616954474}
+the_test_metric: {'auc': 0.8563910590277779, 'spauc': 0.7537727029914529, 'metric': 0.787189292337, 'f1_real': 0.9240445089501692, 'f1_fake': 0.6503340757238307, 'recall': 0.778274405715812, 'recall_real': 0.9326171875, 'recall_fake': 0.6239316239316239, 'precision': 0.7973488818033847, 'precision_real': 0.9156279961649089, 'precision_fake': 0.6790697674418604, 'acc': 0.8751987281399046}

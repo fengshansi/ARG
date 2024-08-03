@@ -74,8 +74,10 @@ class Run():
         json_result = []
         for p, vs in param.items():
             setup_seed(self.config['seed'])
-            best_metric = {}
-            best_metric['metric'] = 0
+            best_val_metric = {}
+            best_val_metric['metric'] = 0
+            the_test_metric = {}
+            the_test_metric['metric'] = 0
             best_v = vs[0]
             best_model_path = None
             for i, v in enumerate(vs):
@@ -88,26 +90,30 @@ class Run():
                 else:
                     raise ValueError('model_name is not supported')
 
-                metrics, model_path, train_epochs = trainer.train(logger)
+                val_metrics,test_metrics, model_path, train_epochs = trainer.train(logger)
                 json_result.append({
                     'lr': self.config['lr'],
-                    'metric': metrics,
+                    'metric': test_metrics,
                     'train_epochs': train_epochs,
                 })
 
-                if metrics['metric'] > best_metric['metric']:
-                    best_metric = metrics
+                if val_metrics['metric'] > best_val_metric['metric']:
+                    best_val_metric = val_metrics
+                    the_test_metric = test_metrics
                     best_v = v
                     best_model_path = model_path
             best_param.append({p: best_v})
             print("best model path:", best_model_path)
-            print("best macro f1:", best_metric['metric'])
-            print("best metric:", best_metric)
+            print("best macro f1:", best_val_metric['metric'])
+            print("best_val_metric:", best_val_metric)
+            print("the_test_metric:", the_test_metric)
             logger.info("best model path:" + best_model_path)
             logger.info("best param " + p + ": " + str(best_v))
-            logger.info("best metric:" + str(best_metric))
+            logger.info("best_val_metric:" + str(best_val_metric))
+            logger.info("the_test_metric:" + str(the_test_metric))
             logger.info('==================================================\n\n')
         with open(json_path, 'w') as file:
             json.dump(json_result, file, indent=4, ensure_ascii=False)
 
-        return best_metric
+        # 返回测试metric
+        return the_test_metric
