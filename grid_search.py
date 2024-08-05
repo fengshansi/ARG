@@ -7,6 +7,7 @@ import numpy as np
 
 from models.arg import Trainer as ARGTrainer
 from models.argd import Trainer as ARGDTrainer
+from models.slm import Trainer as SLMTrainer
 
 def setup_seed(seed):
     random.seed(seed)
@@ -87,6 +88,8 @@ class Run():
                     trainer = ARGTrainer(self.config, self.writer)
                 elif self.config['model_name'] == 'ARG-D':
                     trainer = ARGDTrainer(self.config, self.writer)
+                elif self.config['model_name'] == 'SLM':
+                    trainer = SLMTrainer(self.config, self.writer)
                 else:
                     raise ValueError('model_name is not supported')
 

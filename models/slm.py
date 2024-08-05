@@ -11,11 +11,9 @@ from utils.utils import get_monthly_path, get_tensorboard_writer, process_test_r
 from .arg import ARGModel
 
 
-class ARGDModel(torch.nn.Module):
+class SLMModel(torch.nn.Module):
     def __init__(self, config):
-        super(ARGDModel, self).__init__()
-
-        self.teacher = ARGModel(config)
+        super(SLMModel, self).__init__()
 
         self.bert = BertModel.from_pretrained(config["bert_path"]).requires_grad_(False)
         for name, param in self.bert.named_parameters():
@@ -32,10 +30,6 @@ class ARGDModel(torch.nn.Module):
             config["model"]["mlp"]["dropout"],
         )
 
-        # bert初始化是arg中的bert 而不是原bert  mlp也是那里的mlp
-        self.bert.load_state_dict(self.teacher.bert_content.state_dict())
-        self.mlp.load_state_dict(self.teacher.mlp.state_dict())
-
         self.params = (
             list(self.transformer.parameters())
             + list(self.attention.parameters())
@@ -46,7 +40,6 @@ class ARGDModel(torch.nn.Module):
 
     def forward(self, **kwargs):
 
-
         content, content_masks = kwargs["content"], kwargs["content_masks"]
         content_feature = self.bert(content, attention_mask=content_masks)[0]
 
@@ -55,18 +48,9 @@ class ARGDModel(torch.nn.Module):
 
         label_pred = self.mlp(final_feature)
 
-
-        # teacher计算后直接返回 不参与上面的student计算
-        teacher_res = self.teacher(**kwargs)
-        t_final_feature, t_content_feature = (
-            teacher_res["final_feature"],
-            teacher_res["content_feature"],
-        )
         res = {
             "classify_pred": torch.sigmoid(label_pred.squeeze(1)),
             "s_final_feature": final_feature,
-            "t_final_feature": t_final_feature,
-            "t_content_feature": t_content_feature,
         }
 
         return res
@@ -96,8 +80,8 @@ class Trainer:
         print("\n\n")
         print("==================== start training ====================")
 
-        self.model = ARGDModel(self.config)
-        self.model.teacher.load_state_dict(torch.load(self.config["teacher_path"]))
+        self.model = SLMModel(self.config)
+
         if self.config["use_cuda"]:
             self.model = self.model.cuda()
 
@@ -168,7 +152,6 @@ class Trainer:
 
             train_avg_loss = Averager()
             train_avg_loss_classify = Averager()
-            train_avg_loss_final = Averager()
 
             for step_n, batch in enumerate(train_data_iter):
                 batch_data = data2gpu(
@@ -181,12 +164,9 @@ class Trainer:
 
                 # loss cal
                 loss_classify = loss_fn(res["classify_pred"], label.float())
-                loss_final = loss_crit(res["s_final_feature"], res["t_final_feature"])
 
                 # loss reweight
-                loss = (
-                    loss_classify + self.config["model"]["kd_loss_weight"] * loss_final
-                )
+                loss = loss_classify
 
                 optimizer.zero_grad()
                 loss.backward()
@@ -195,7 +175,6 @@ class Trainer:
                 # record loss
                 train_avg_loss.add(loss.item())
                 train_avg_loss_classify.add(loss_classify.item())
-                train_avg_loss_final.add(torch.mean(loss_final).item())
 
             print("----- in val progress... -----")
             results, val_aux_info = self.test(val_loader)
@@ -218,18 +197,14 @@ class Trainer:
                 logger.info(
                     "train loss classify: {}".format(train_avg_loss_classify.item())
                 )
-                logger.info("train loss final: {}".format(train_avg_loss_final.item()))
+
                 logger.info("\n")
                 logger.info(
                     "val loss classify: {}".format(
                         val_aux_info["val_avg_loss_classify"].item()
                     )
                 )
-                logger.info(
-                    "val loss final: {}".format(
-                        val_aux_info["val_avg_loss_final"].item()
-                    )
-                )
+         
 
                 logger.info("val result: {}".format(results))
                 logger.info("\n")
@@ -289,7 +264,6 @@ class Trainer:
         data_iter = tqdm.tqdm(dataloader)
 
         val_avg_loss_classify = Averager()
-        val_avg_loss_final = Averager()
 
         for step_n, batch in enumerate(data_iter):
             with torch.no_grad():
@@ -306,14 +280,10 @@ class Trainer:
                 label.extend(batch_label.detach().cpu().numpy().tolist())
                 pred.extend(res["classify_pred"].detach().cpu().numpy().tolist())
 
-                loss_final = loss_crit(res["s_final_feature"], res["t_final_feature"])
-
                 val_avg_loss_classify.add(loss_classify.item())
-                val_avg_loss_final.add(torch.mean(loss_final).item())
 
         aux_info = {
             "val_avg_loss_classify": val_avg_loss_classify,
-            "val_avg_loss_final": val_avg_loss_final,
         }
 
         return metrics(label, pred), aux_info
@@ -321,7 +291,7 @@ class Trainer:
     def predict(self, dataloader):
         if self.config["eval_mode"]:
             print("month {} model loading...".format(self.config["month"]))
-            self.model = ARGDModel(self.config)
+            self.model = SLMModel(self.config)
             if self.config["use_cuda"]:
                 self.model = self.model.cuda()
             print("========== in test process ==========")
