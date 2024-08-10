@@ -5,3 +5,4 @@ logs/*
 param_model/*
 run_zh_local.sh
 run_en_local.sh
+*pkl

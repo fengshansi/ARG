@@ -71,6 +71,62 @@ class Trainer:
         else:
             self.save_param_dir = os.makedirs(self.save_path)
 
+    def getloader(self):
+
+        self.model = SLMModel(self.config)
+
+        if self.config["use_cuda"]:
+            self.model = self.model.cuda()
+
+        train_path = get_monthly_path(
+            self.config["data_type"],
+            self.config["root_path"],
+            self.config["month"],
+            "train.json",
+        )
+        train_loader = get_dataloader(
+            train_path,
+            self.config["max_len"],
+            self.config["batchsize"],
+            shuffle=True,
+            bert_path=self.config["bert_path"],
+            data_type=self.config["data_type"],
+            language=self.config["language"],
+        )
+
+        val_path = get_monthly_path(
+            self.config["data_type"],
+            self.config["root_path"],
+            self.config["month"],
+            "val.json",
+        )
+        val_loader = get_dataloader(
+            val_path,
+            self.config["max_len"],
+            self.config["batchsize"],
+            shuffle=False,
+            bert_path=self.config["bert_path"],
+            data_type=self.config["data_type"],
+            language=self.config["language"],
+        )
+
+        test_path = get_monthly_path(
+            self.config["data_type"],
+            self.config["root_path"],
+            self.config["month"],
+            "test.json",
+        )
+        test_future_loader = get_dataloader(
+            test_path,
+            self.config["max_len"],
+            self.config["batchsize"],
+            shuffle=False,
+            bert_path=self.config["bert_path"],
+            data_type=self.config["data_type"],
+            language=self.config["language"],
+        )
+        return train_loader, val_loader, test_future_loader
+
     def train(self, logger=None):
         st_tm = time.time()
         writer = self.writer
@@ -204,7 +260,6 @@ class Trainer:
                         val_aux_info["val_avg_loss_classify"].item()
                     )
                 )
-         
 
                 logger.info("val result: {}".format(results))
                 logger.info("\n")
@@ -326,4 +381,11 @@ class Trainer:
                 ae.extend(ae_list)
                 accuracy.extend(accuracy_list)
 
-        return metrics(label, pred), label, pred, id, ae, accuracy
+        return (
+            metrics(label, pred),
+            label,
+            pred,
+            id,
+            ae,
+            accuracy,
+        )
