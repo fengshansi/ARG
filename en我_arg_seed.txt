@@ -1,0 +1,340 @@
+lr: 5e-05; model name: ARG; batchsize: 64; epoch: 50; gpu: 0;
+data_type: rationale; data_path: /home/tzh/ARG/data我/en; data_name: 测试种子_en我;
+before in config
+{'use_cuda': True, 'seed': 0, 'batchsize': 64, 'max_len': 170, 'early_stop': 5, 'language': 'en', 'root_path': '/home/tzh/ARG/data我/en', 'weight_decay': 5e-05, 'model': {'mlp': {'dims': [384], 'dropout': 0.2}, 'llm_judgment_predictor_weight': 1.0, 'rationale_usefulness_evaluator_weight': 1.5, 'kd_loss_weight': 1}, 'emb_dim': 768, 'co_attention_dim': 300, 'lr': 5e-05, 'epoch': 50, 'model_name': 'ARG', 'save_log_dir': './logs', 'save_param_dir': './param_model', 'param_log_dir': './logs/param', 'tensorboard_dir': './logs/tensorlog', 'bert_path': '/home/tzh/model/bert-base-uncased', 'data_type': 'rationale', 'data_name': '测试种子_en我', 'eval_mode': False, 'teacher_path': None, 'month': 1, 'eval_model_path': ''}
+{'lr': [5e-05]}
+保存模型参数的目录：./param_model/ARG_测试种子_en我/1
+
+
+
+==================== start training ====================
+time cost in model and data loading: 70.80700874328613s
+---------- epoch 0 ----------
+----- in val progress... -----
+current {'auc': 0.7984481935381188, 'spauc': 0.6925287115608534, 'metric': 0.4470486111111111, 'f1_real': 0.8940972222222222, 'f1_fake': 0.0, 'recall': 0.5, 'recall_real': 1.0, 'recall_fake': 0.0, 'precision': 0.4042386185243328, 'precision_real': 0.8084772370486656, 'precision_fake': 0.0, 'acc': 0.8084772370486656}
+Max {'auc': 0.7984481935381188, 'spauc': 0.6925287115608534, 'metric': 0.4470486111111111, 'f1_real': 0.8940972222222222, 'f1_fake': 0.0, 'recall': 0.5, 'recall_real': 1.0, 'recall_fake': 0.0, 'precision': 0.4042386185243328, 'precision_real': 0.8084772370486656, 'precision_fake': 0.0, 'acc': 0.8084772370486656}
+
+---------- epoch 1 ----------
+----- in val progress... -----
+current {'auc': 0.8423921693458538, 'spauc': 0.6742253532925103, 'metric': 0.7603239556515025, 'f1_real': 0.9132726401533302, 'f1_fake': 0.6073752711496746, 'recall': 0.7495066051249404, 'recall_real': 0.925242718446602, 'recall_fake': 0.5737704918032787, 'precision': 0.7733848078859829, 'precision_real': 0.9016083254493851, 'precision_fake': 0.6451612903225806, 'acc': 0.8579277864992151}
+Max {'auc': 0.8423921693458538, 'spauc': 0.6742253532925103, 'metric': 0.7603239556515025, 'f1_real': 0.9132726401533302, 'f1_fake': 0.6073752711496746, 'recall': 0.7495066051249404, 'recall_real': 0.925242718446602, 'recall_fake': 0.5737704918032787, 'precision': 0.7733848078859829, 'precision_real': 0.9016083254493851, 'precision_fake': 0.6451612903225806, 'acc': 0.8579277864992151}
+
+---------- epoch 2 ----------
+----- in val progress... -----
+current {'auc': 0.8638826993474454, 'spauc': 0.7359415967900015, 'metric': 0.74987495617623, 'f1_real': 0.9218604651162791, 'f1_fake': 0.577889447236181, 'recall': 0.7167236988699666, 'recall_real': 0.962135922330097, 'recall_fake': 0.4713114754098361, 'precision': 0.8157873376623377, 'precision_real': 0.8848214285714285, 'precision_fake': 0.7467532467532467, 'acc': 0.8681318681318682}
+Max {'auc': 0.8423921693458538, 'spauc': 0.6742253532925103, 'metric': 0.7603239556515025, 'f1_real': 0.9132726401533302, 'f1_fake': 0.6073752711496746, 'recall': 0.7495066051249404, 'recall_real': 0.925242718446602, 'recall_fake': 0.5737704918032787, 'precision': 0.7733848078859829, 'precision_real': 0.9016083254493851, 'precision_fake': 0.6451612903225806, 'acc': 0.8579277864992151}
+
+---------- epoch 3 ----------
+----- in val progress... -----
+current {'auc': 0.8602936495304792, 'spauc': 0.7315018805967648, 'metric': 0.7700715421303657, 'f1_real': 0.9140926640926641, 'f1_fake': 0.6260504201680673, 'recall': 0.7650366067165366, 'recall_real': 0.9194174757281554, 'recall_fake': 0.610655737704918, 'precision': 0.7755352769872261, 'precision_real': 0.9088291746641075, 'precision_fake': 0.6422413793103449, 'acc': 0.8602825745682888}
+Max {'auc': 0.8602936495304792, 'spauc': 0.7315018805967648, 'metric': 0.7700715421303657, 'f1_real': 0.9140926640926641, 'f1_fake': 0.6260504201680673, 'recall': 0.7650366067165366, 'recall_real': 0.9194174757281554, 'recall_fake': 0.610655737704918, 'precision': 0.7755352769872261, 'precision_real': 0.9088291746641075, 'precision_fake': 0.6422413793103449, 'acc': 0.8602825745682888}
+
+---------- epoch 4 ----------
+----- in val progress... -----
+current {'auc': 0.8645830017507561, 'spauc': 0.7311249235614901, 'metric': 0.7547755903943927, 'f1_real': 0.9180018850141376, 'f1_fake': 0.5915492957746479, 'recall': 0.7310122552920579, 'recall_real': 0.945631067961165, 'recall_fake': 0.5163934426229508, 'precision': 0.7921245421245422, 'precision_real': 0.891941391941392, 'precision_fake': 0.6923076923076923, 'acc': 0.8634222919937206}
+Max {'auc': 0.8602936495304792, 'spauc': 0.7315018805967648, 'metric': 0.7700715421303657, 'f1_real': 0.9140926640926641, 'f1_fake': 0.6260504201680673, 'recall': 0.7650366067165366, 'recall_real': 0.9194174757281554, 'recall_fake': 0.610655737704918, 'precision': 0.7755352769872261, 'precision_real': 0.9088291746641075, 'precision_fake': 0.6422413793103449, 'acc': 0.8602825745682888}
+
+---------- epoch 5 ----------
+----- in val progress... -----
+current {'auc': 0.8603971032946045, 'spauc': 0.732213910552284, 'metric': 0.764799659438421, 'f1_real': 0.9195075757575758, 'f1_fake': 0.6100917431192661, 'recall': 0.7439002069075282, 'recall_real': 0.9427184466019417, 'recall_fake': 0.5450819672131147, 'precision': 0.7950602664818238, 'precision_real': 0.8974121996303143, 'precision_fake': 0.6927083333333334, 'acc': 0.8665620094191523}
+Max {'auc': 0.8602936495304792, 'spauc': 0.7315018805967648, 'metric': 0.7700715421303657, 'f1_real': 0.9140926640926641, 'f1_fake': 0.6260504201680673, 'recall': 0.7650366067165366, 'recall_real': 0.9194174757281554, 'recall_fake': 0.610655737704918, 'precision': 0.7755352769872261, 'precision_real': 0.9088291746641075, 'precision_fake': 0.6422413793103449, 'acc': 0.8602825745682888}
+
+---------- epoch 6 ----------
+----- in val progress... -----
+current {'auc': 0.8368494349832882, 'spauc': 0.720130343365975, 'metric': 0.7334112951344423, 'f1_real': 0.9190189726978252, 'f1_fake': 0.5478036175710594, 'recall': 0.6992519497055547, 'recall_real': 0.9640776699029127, 'recall_fake': 0.4344262295081967, 'precision': 0.8096214130696889, 'precision_real': 0.8779840848806366, 'precision_fake': 0.7412587412587412, 'acc': 0.8626373626373627}
+Max {'auc': 0.8602936495304792, 'spauc': 0.7315018805967648, 'metric': 0.7700715421303657, 'f1_real': 0.9140926640926641, 'f1_fake': 0.6260504201680673, 'recall': 0.7650366067165366, 'recall_real': 0.9194174757281554, 'recall_fake': 0.610655737704918, 'precision': 0.7755352769872261, 'precision_real': 0.9088291746641075, 'precision_fake': 0.6422413793103449, 'acc': 0.8602825745682888}
+
+---------- epoch 7 ----------
+----- in val progress... -----
+current {'auc': 0.8100350151201655, 'spauc': 0.7156278010001926, 'metric': 0.7491330830204422, 'f1_real': 0.9167058823529411, 'f1_fake': 0.5815602836879433, 'recall': 0.7248647143084513, 'recall_real': 0.945631067961165, 'recall_fake': 0.5040983606557377, 'precision': 0.7883242774419019, 'precision_real': 0.8894977168949771, 'precision_fake': 0.6871508379888268, 'acc': 0.8610675039246468}
+Max {'auc': 0.8602936495304792, 'spauc': 0.7315018805967648, 'metric': 0.7700715421303657, 'f1_real': 0.9140926640926641, 'f1_fake': 0.6260504201680673, 'recall': 0.7650366067165366, 'recall_real': 0.9194174757281554, 'recall_fake': 0.610655737704918, 'precision': 0.7755352769872261, 'precision_real': 0.9088291746641075, 'precision_fake': 0.6422413793103449, 'acc': 0.8602825745682888}
+
+---------- epoch 8 ----------
+----- in val progress... -----
+current {'auc': 0.8361650485436893, 'spauc': 0.7197743283882155, 'metric': 0.766732175335376, 'f1_real': 0.9132111861137898, 'f1_fake': 0.620253164556962, 'recall': 0.760938246060799, 'recall_real': 0.9194174757281554, 'recall_fake': 0.6024590163934426, 'precision': 0.7731092786939864, 'precision_real': 0.907088122605364, 'precision_fake': 0.6391304347826087, 'acc': 0.858712715855573}
+Max {'auc': 0.8602936495304792, 'spauc': 0.7315018805967648, 'metric': 0.7700715421303657, 'f1_real': 0.9140926640926641, 'f1_fake': 0.6260504201680673, 'recall': 0.7650366067165366, 'recall_real': 0.9194174757281554, 'recall_fake': 0.610655737704918, 'precision': 0.7755352769872261, 'precision_real': 0.9088291746641075, 'precision_fake': 0.6422413793103449, 'acc': 0.8602825745682888}
+
+test results: {'auc': 0.8583650507478633, 'spauc': 0.7404092161493477, 'metric': 0.7708701702685004, 'f1_real': 0.912573673870334, 'f1_fake': 0.6291666666666668, 'recall': 0.7762628538995726, 'recall_real': 0.9072265625, 'recall_fake': 0.6452991452991453, 'precision': 0.7659026639673512, 'precision_real': 0.9179841897233202, 'precision_fake': 0.6138211382113821, 'acc': 0.8585055643879174}
+best model path: ./param_model/ARG_测试种子_en我/1/parameter_bert.pkl
+best macro f1: 0.7700715421303657
+best_val_metric: {'auc': 0.8602936495304792, 'spauc': 0.7315018805967648, 'metric': 0.7700715421303657, 'f1_real': 0.9140926640926641, 'f1_fake': 0.6260504201680673, 'recall': 0.7650366067165366, 'recall_real': 0.9194174757281554, 'recall_fake': 0.610655737704918, 'precision': 0.7755352769872261, 'precision_real': 0.9088291746641075, 'precision_fake': 0.6422413793103449, 'acc': 0.8602825745682888}
+the_test_metric: {'auc': 0.8583650507478633, 'spauc': 0.7404092161493477, 'metric': 0.7708701702685004, 'f1_real': 0.912573673870334, 'f1_fake': 0.6291666666666668, 'recall': 0.7762628538995726, 'recall_real': 0.9072265625, 'recall_fake': 0.6452991452991453, 'precision': 0.7659026639673512, 'precision_real': 0.9179841897233202, 'precision_fake': 0.6138211382113821, 'acc': 0.8585055643879174}
+lr: 5e-05; model name: ARG; batchsize: 64; epoch: 50; gpu: 0;
+data_type: rationale; data_path: /home/tzh/ARG/data我/en; data_name: 测试种子_en我;
+before in config
+{'use_cuda': True, 'seed': 1, 'batchsize': 64, 'max_len': 170, 'early_stop': 5, 'language': 'en', 'root_path': '/home/tzh/ARG/data我/en', 'weight_decay': 5e-05, 'model': {'mlp': {'dims': [384], 'dropout': 0.2}, 'llm_judgment_predictor_weight': 1.0, 'rationale_usefulness_evaluator_weight': 1.5, 'kd_loss_weight': 1}, 'emb_dim': 768, 'co_attention_dim': 300, 'lr': 5e-05, 'epoch': 50, 'model_name': 'ARG', 'save_log_dir': './logs', 'save_param_dir': './param_model', 'param_log_dir': './logs/param', 'tensorboard_dir': './logs/tensorlog', 'bert_path': '/home/tzh/model/bert-base-uncased', 'data_type': 'rationale', 'data_name': '测试种子_en我', 'eval_mode': False, 'teacher_path': None, 'month': 1, 'eval_model_path': ''}
+{'lr': [5e-05]}
+保存模型参数的目录：./param_model/ARG_测试种子_en我/1
+
+
+
+==================== start training ====================
+time cost in model and data loading: 67.92786693572998s
+---------- epoch 0 ----------
+----- in val progress... -----
+current {'auc': 0.776925831609104, 'spauc': 0.6925287115608534, 'metric': 0.4470486111111111, 'f1_real': 0.8940972222222222, 'f1_fake': 0.0, 'recall': 0.5, 'recall_real': 1.0, 'recall_fake': 0.0, 'precision': 0.4042386185243328, 'precision_real': 0.8084772370486656, 'precision_fake': 0.0, 'acc': 0.8084772370486656}
+Max {'auc': 0.776925831609104, 'spauc': 0.6925287115608534, 'metric': 0.4470486111111111, 'f1_real': 0.8940972222222222, 'f1_fake': 0.0, 'recall': 0.5, 'recall_real': 1.0, 'recall_fake': 0.0, 'precision': 0.4042386185243328, 'precision_real': 0.8084772370486656, 'precision_fake': 0.0, 'acc': 0.8084772370486656}
+
+---------- epoch 1 ----------
+----- in val progress... -----
+current {'auc': 0.8627844978513449, 'spauc': 0.7282558616818985, 'metric': 0.6069942885067653, 'f1_real': 0.9105403011514616, 'f1_fake': 0.30344827586206896, 'recall': 0.5891930606398218, 'recall_real': 0.9980582524271845, 'recall_fake': 0.18032786885245902, 'precision': 0.8968276448095172, 'precision_real': 0.8371335504885994, 'precision_fake': 0.9565217391304348, 'acc': 0.8414442700156985}
+Max {'auc': 0.8627844978513449, 'spauc': 0.7282558616818985, 'metric': 0.6069942885067653, 'f1_real': 0.9105403011514616, 'f1_fake': 0.30344827586206896, 'recall': 0.5891930606398218, 'recall_real': 0.9980582524271845, 'recall_fake': 0.18032786885245902, 'precision': 0.8968276448095172, 'precision_real': 0.8371335504885994, 'precision_fake': 0.9565217391304348, 'acc': 0.8414442700156985}
+
+---------- epoch 2 ----------
+----- in val progress... -----
+current {'auc': 0.8625059684863919, 'spauc': 0.7285281084295969, 'metric': 0.7437384044526902, 'f1_real': 0.9211502782931356, 'f1_fake': 0.5663265306122448, 'recall': 0.709497851344899, 'recall_real': 0.9640776699029127, 'recall_fake': 0.45491803278688525, 'precision': 0.8159413854351687, 'precision_real': 0.8818827708703375, 'precision_fake': 0.75, 'acc': 0.8665620094191523}
+Max {'auc': 0.8625059684863919, 'spauc': 0.7285281084295969, 'metric': 0.7437384044526902, 'f1_real': 0.9211502782931356, 'f1_fake': 0.5663265306122448, 'recall': 0.709497851344899, 'recall_real': 0.9640776699029127, 'recall_fake': 0.45491803278688525, 'precision': 0.8159413854351687, 'precision_real': 0.8818827708703375, 'precision_fake': 0.75, 'acc': 0.8665620094191523}
+
+---------- epoch 3 ----------
+----- in val progress... -----
+current {'auc': 0.8583121120483845, 'spauc': 0.7366955108605511, 'metric': 0.7673237805118001, 'f1_real': 0.9125181246979217, 'f1_fake': 0.6221294363256784, 'recall': 0.763580296036925, 'recall_real': 0.916504854368932, 'recall_fake': 0.610655737704918, 'precision': 0.7713042409845801, 'precision_real': 0.9085659287776708, 'precision_fake': 0.6340425531914894, 'acc': 0.8579277864992151}
+Max {'auc': 0.8583121120483845, 'spauc': 0.7366955108605511, 'metric': 0.7673237805118001, 'f1_real': 0.9125181246979217, 'f1_fake': 0.6221294363256784, 'recall': 0.763580296036925, 'recall_real': 0.916504854368932, 'recall_fake': 0.610655737704918, 'precision': 0.7713042409845801, 'precision_real': 0.9085659287776708, 'precision_fake': 0.6340425531914894, 'acc': 0.8579277864992151}
+
+---------- epoch 4 ----------
+----- in val progress... -----
+current {'auc': 0.84783940792615, 'spauc': 0.7396064568551731, 'metric': 0.7722686942037351, 'f1_real': 0.9265325222274217, 'f1_fake': 0.6180048661800486, 'recall': 0.7408284259111889, 'recall_real': 0.9611650485436893, 'recall_fake': 0.5204918032786885, 'precision': 0.8273939925027993, 'precision_real': 0.8943089430894309, 'precision_fake': 0.7604790419161677, 'acc': 0.8767660910518054}
+Max {'auc': 0.84783940792615, 'spauc': 0.7396064568551731, 'metric': 0.7722686942037351, 'f1_real': 0.9265325222274217, 'f1_fake': 0.6180048661800486, 'recall': 0.7408284259111889, 'recall_real': 0.9611650485436893, 'recall_fake': 0.5204918032786885, 'precision': 0.8273939925027993, 'precision_real': 0.8943089430894309, 'precision_fake': 0.7604790419161677, 'acc': 0.8767660910518054}
+
+---------- epoch 5 ----------
+----- in val progress... -----
+current {'auc': 0.8418589845615152, 'spauc': 0.733156303140471, 'metric': 0.7683940367574504, 'f1_real': 0.9085574572127139, 'f1_fake': 0.6282306163021869, 'recall': 0.7747413655896864, 'recall_real': 0.9019417475728155, 'recall_fake': 0.6475409836065574, 'precision': 0.7626547729996006, 'precision_real': 0.9152709359605912, 'precision_fake': 0.61003861003861, 'acc': 0.8532182103610675}
+Max {'auc': 0.84783940792615, 'spauc': 0.7396064568551731, 'metric': 0.7722686942037351, 'f1_real': 0.9265325222274217, 'f1_fake': 0.6180048661800486, 'recall': 0.7408284259111889, 'recall_real': 0.9611650485436893, 'recall_fake': 0.5204918032786885, 'precision': 0.8273939925027993, 'precision_real': 0.8943089430894309, 'precision_fake': 0.7604790419161677, 'acc': 0.8767660910518054}
+
+---------- epoch 6 ----------
+----- in val progress... -----
+current {'auc': 0.8287521884450103, 'spauc': 0.731669417056887, 'metric': 0.7613743038430634, 'f1_real': 0.9203956665096561, 'f1_fake': 0.6023529411764705, 'recall': 0.7365669266274073, 'recall_real': 0.9485436893203884, 'recall_fake': 0.5245901639344263, 'precision': 0.8005262013920832, 'precision_real': 0.8938700823421775, 'precision_fake': 0.7071823204419889, 'acc': 0.8673469387755102}
+Max {'auc': 0.84783940792615, 'spauc': 0.7396064568551731, 'metric': 0.7722686942037351, 'f1_real': 0.9265325222274217, 'f1_fake': 0.6180048661800486, 'recall': 0.7408284259111889, 'recall_real': 0.9611650485436893, 'recall_fake': 0.5204918032786885, 'precision': 0.8273939925027993, 'precision_real': 0.8943089430894309, 'precision_fake': 0.7604790419161677, 'acc': 0.8767660910518054}
+
+---------- epoch 7 ----------
+----- in val progress... -----
+current {'auc': 0.8290187808371796, 'spauc': 0.7251773792271543, 'metric': 0.7630706084155989, 'f1_real': 0.9196597353497165, 'f1_fake': 0.6064814814814815, 'recall': 0.7407727200381984, 'recall_real': 0.9446601941747573, 'recall_fake': 0.5368852459016393, 'precision': 0.7963784726303829, 'precision_real': 0.8959484346224678, 'precision_fake': 0.6968085106382979, 'acc': 0.8665620094191523}
+Max {'auc': 0.84783940792615, 'spauc': 0.7396064568551731, 'metric': 0.7722686942037351, 'f1_real': 0.9265325222274217, 'f1_fake': 0.6180048661800486, 'recall': 0.7408284259111889, 'recall_real': 0.9611650485436893, 'recall_fake': 0.5204918032786885, 'precision': 0.8273939925027993, 'precision_real': 0.8943089430894309, 'precision_fake': 0.7604790419161677, 'acc': 0.8767660910518054}
+
+---------- epoch 8 ----------
+----- in val progress... -----
+current {'auc': 0.7821621836702213, 'spauc': 0.7120257671075667, 'metric': 0.7451566038102488, 'f1_real': 0.9181860682561944, 'f1_fake': 0.5721271393643031, 'recall': 0.7164531274868693, 'recall_real': 0.9533980582524272, 'recall_fake': 0.47950819672131145, 'precision': 0.7972866628412165, 'precision_real': 0.8854824165915239, 'precision_fake': 0.7090909090909091, 'acc': 0.8626373626373627}
+Max {'auc': 0.84783940792615, 'spauc': 0.7396064568551731, 'metric': 0.7722686942037351, 'f1_real': 0.9265325222274217, 'f1_fake': 0.6180048661800486, 'recall': 0.7408284259111889, 'recall_real': 0.9611650485436893, 'recall_fake': 0.5204918032786885, 'precision': 0.8273939925027993, 'precision_real': 0.8943089430894309, 'precision_fake': 0.7604790419161677, 'acc': 0.8767660910518054}
+
+---------- epoch 9 ----------
+----- in val progress... -----
+current {'auc': 0.8107392965144039, 'spauc': 0.722643390267807, 'metric': 0.7595600954585707, 'f1_real': 0.92054536906441, 'f1_fake': 0.5985748218527315, 'recall': 0.7334394397580773, 'recall_real': 0.9504854368932039, 'recall_fake': 0.5163934426229508, 'precision': 0.8021491587225561, 'precision_real': 0.8924339106654512, 'precision_fake': 0.711864406779661, 'acc': 0.8673469387755102}
+Max {'auc': 0.84783940792615, 'spauc': 0.7396064568551731, 'metric': 0.7722686942037351, 'f1_real': 0.9265325222274217, 'f1_fake': 0.6180048661800486, 'recall': 0.7408284259111889, 'recall_real': 0.9611650485436893, 'recall_fake': 0.5204918032786885, 'precision': 0.8273939925027993, 'precision_real': 0.8943089430894309, 'precision_fake': 0.7604790419161677, 'acc': 0.8767660910518054}
+
+test results: {'auc': 0.8533653846153846, 'spauc': 0.7395306174089069, 'metric': 0.7725997335755792, 'f1_real': 0.9253447456015216, 'f1_fake': 0.6198547215496368, 'recall': 0.7486019297542735, 'recall_real': 0.9501953125, 'recall_fake': 0.5470085470085471, 'precision': 0.8084223442976892, 'precision_real': 0.901760889712697, 'precision_fake': 0.7150837988826816, 'acc': 0.8751987281399046}
+best model path: ./param_model/ARG_测试种子_en我/1/parameter_bert.pkl
+best macro f1: 0.7722686942037351
+best_val_metric: {'auc': 0.84783940792615, 'spauc': 0.7396064568551731, 'metric': 0.7722686942037351, 'f1_real': 0.9265325222274217, 'f1_fake': 0.6180048661800486, 'recall': 0.7408284259111889, 'recall_real': 0.9611650485436893, 'recall_fake': 0.5204918032786885, 'precision': 0.8273939925027993, 'precision_real': 0.8943089430894309, 'precision_fake': 0.7604790419161677, 'acc': 0.8767660910518054}
+the_test_metric: {'auc': 0.8533653846153846, 'spauc': 0.7395306174089069, 'metric': 0.7725997335755792, 'f1_real': 0.9253447456015216, 'f1_fake': 0.6198547215496368, 'recall': 0.7486019297542735, 'recall_real': 0.9501953125, 'recall_fake': 0.5470085470085471, 'precision': 0.8084223442976892, 'precision_real': 0.901760889712697, 'precision_fake': 0.7150837988826816, 'acc': 0.8751987281399046}
+lr: 5e-05; model name: ARG; batchsize: 64; epoch: 50; gpu: 0;
+data_type: rationale; data_path: /home/tzh/ARG/data我/en; data_name: 测试种子_en我;
+before in config
+{'use_cuda': True, 'seed': 2, 'batchsize': 64, 'max_len': 170, 'early_stop': 5, 'language': 'en', 'root_path': '/home/tzh/ARG/data我/en', 'weight_decay': 5e-05, 'model': {'mlp': {'dims': [384], 'dropout': 0.2}, 'llm_judgment_predictor_weight': 1.0, 'rationale_usefulness_evaluator_weight': 1.5, 'kd_loss_weight': 1}, 'emb_dim': 768, 'co_attention_dim': 300, 'lr': 5e-05, 'epoch': 50, 'model_name': 'ARG', 'save_log_dir': './logs', 'save_param_dir': './param_model', 'param_log_dir': './logs/param', 'tensorboard_dir': './logs/tensorlog', 'bert_path': '/home/tzh/model/bert-base-uncased', 'data_type': 'rationale', 'data_name': '测试种子_en我', 'eval_mode': False, 'teacher_path': None, 'month': 1, 'eval_model_path': ''}
+{'lr': [5e-05]}
+保存模型参数的目录：./param_model/ARG_测试种子_en我/1
+
+
+
+==================== start training ====================
+time cost in model and data loading: 67.29415440559387s
+---------- epoch 0 ----------
+----- in val progress... -----
+current {'auc': 0.78870364475569, 'spauc': 0.6902250852341741, 'metric': 0.4470486111111111, 'f1_real': 0.8940972222222222, 'f1_fake': 0.0, 'recall': 0.5, 'recall_real': 1.0, 'recall_fake': 0.0, 'precision': 0.4042386185243328, 'precision_real': 0.8084772370486656, 'precision_fake': 0.0, 'acc': 0.8084772370486656}
+Max {'auc': 0.78870364475569, 'spauc': 0.6902250852341741, 'metric': 0.4470486111111111, 'f1_real': 0.8940972222222222, 'f1_fake': 0.0, 'recall': 0.5, 'recall_real': 1.0, 'recall_fake': 0.0, 'precision': 0.4042386185243328, 'precision_real': 0.8084772370486656, 'precision_fake': 0.0, 'acc': 0.8084772370486656}
+
+---------- epoch 1 ----------
+----- in val progress... -----
+current {'auc': 0.8535850708260385, 'spauc': 0.7024971309381204, 'metric': 0.7242711109676232, 'f1_real': 0.916242480333179, 'f1_fake': 0.5322997416020673, 'recall': 0.6916480980423365, 'recall_real': 0.9611650485436893, 'recall_fake': 0.42213114754098363, 'precision': 0.7978056426332288, 'precision_real': 0.8753315649867374, 'precision_fake': 0.7202797202797203, 'acc': 0.8579277864992151}
+Max {'auc': 0.8535850708260385, 'spauc': 0.7024971309381204, 'metric': 0.7242711109676232, 'f1_real': 0.916242480333179, 'f1_fake': 0.5322997416020673, 'recall': 0.6916480980423365, 'recall_real': 0.9611650485436893, 'recall_fake': 0.42213114754098363, 'precision': 0.7978056426332288, 'precision_real': 0.8753315649867374, 'precision_fake': 0.7202797202797203, 'acc': 0.8579277864992151}
+
+---------- epoch 2 ----------
+----- in val progress... -----
+current {'auc': 0.8545718605761579, 'spauc': 0.7323395628973756, 'metric': 0.7508071395915521, 'f1_real': 0.9229340761374188, 'f1_fake': 0.5786802030456852, 'recall': 0.7161308292217093, 'recall_real': 0.9650485436893204, 'recall_fake': 0.4672131147540984, 'precision': 0.822170818505338, 'precision_real': 0.8843416370106761, 'precision_fake': 0.76, 'acc': 0.869701726844584}
+Max {'auc': 0.8545718605761579, 'spauc': 0.7323395628973756, 'metric': 0.7508071395915521, 'f1_real': 0.9229340761374188, 'f1_fake': 0.5786802030456852, 'recall': 0.7161308292217093, 'recall_real': 0.9650485436893204, 'recall_fake': 0.4672131147540984, 'precision': 0.822170818505338, 'precision_real': 0.8843416370106761, 'precision_fake': 0.76, 'acc': 0.869701726844584}
+
+---------- epoch 3 ----------
+----- in val progress... -----
+current {'auc': 0.8589845615151998, 'spauc': 0.732611809645074, 'metric': 0.7675413022351798, 'f1_real': 0.9105928085519922, 'f1_fake': 0.6244897959183674, 'recall': 0.7683789590959733, 'recall_real': 0.9097087378640777, 'recall_fake': 0.6270491803278688, 'precision': 0.7667149093669925, 'precision_real': 0.9114785992217899, 'precision_fake': 0.6219512195121951, 'acc': 0.8555729984301413}
+Max {'auc': 0.8589845615151998, 'spauc': 0.732611809645074, 'metric': 0.7675413022351798, 'f1_real': 0.9105928085519922, 'f1_fake': 0.6244897959183674, 'recall': 0.7683789590959733, 'recall_real': 0.9097087378640777, 'recall_fake': 0.6270491803278688, 'precision': 0.7667149093669925, 'precision_real': 0.9114785992217899, 'precision_fake': 0.6219512195121951, 'acc': 0.8555729984301413}
+
+---------- epoch 4 ----------
+----- in val progress... -----
+current {'auc': 0.8557257679452491, 'spauc': 0.7324023890699214, 'metric': 0.7698212359138752, 'f1_real': 0.9159865578492559, 'f1_fake': 0.6236559139784946, 'recall': 0.7602379436574884, 'recall_real': 0.9262135922330097, 'recall_fake': 0.5942622950819673, 'precision': 0.7810457516339869, 'precision_real': 0.905982905982906, 'precision_fake': 0.6561085972850679, 'acc': 0.8626373626373627}
+Max {'auc': 0.8557257679452491, 'spauc': 0.7324023890699214, 'metric': 0.7698212359138752, 'f1_real': 0.9159865578492559, 'f1_fake': 0.6236559139784946, 'recall': 0.7602379436574884, 'recall_real': 0.9262135922330097, 'recall_fake': 0.5942622950819673, 'precision': 0.7810457516339869, 'precision_real': 0.905982905982906, 'precision_fake': 0.6561085972850679, 'acc': 0.8626373626373627}
+
+---------- epoch 5 ----------
+----- in val progress... -----
+current {'auc': 0.8606000318319273, 'spauc': 0.7306641982961543, 'metric': 0.7606355130716747, 'f1_real': 0.9150763358778625, 'f1_fake': 0.6061946902654868, 'recall': 0.7462716855005571, 'recall_real': 0.9310679611650485, 'recall_fake': 0.5614754098360656, 'precision': 0.7791393058161351, 'precision_real': 0.899624765478424, 'precision_fake': 0.6586538461538461, 'acc': 0.8602825745682888}
+Max {'auc': 0.8557257679452491, 'spauc': 0.7324023890699214, 'metric': 0.7698212359138752, 'f1_real': 0.9159865578492559, 'f1_fake': 0.6236559139784946, 'recall': 0.7602379436574884, 'recall_real': 0.9262135922330097, 'recall_fake': 0.5942622950819673, 'precision': 0.7810457516339869, 'precision_real': 0.905982905982906, 'precision_fake': 0.6561085972850679, 'acc': 0.8626373626373627}
+
+---------- epoch 6 ----------
+----- in val progress... -----
+current {'auc': 0.8467650803756167, 'spauc': 0.727355353208742, 'metric': 0.7529261447899792, 'f1_real': 0.9204864359214219, 'f1_fake': 0.5853658536585366, 'recall': 0.7235715422568836, 'recall_real': 0.9553398058252427, 'recall_fake': 0.4918032786885246, 'precision': 0.805489104432169, 'precision_real': 0.8880866425992779, 'precision_fake': 0.7228915662650602, 'acc': 0.8665620094191523}
+Max {'auc': 0.8557257679452491, 'spauc': 0.7324023890699214, 'metric': 0.7698212359138752, 'f1_real': 0.9159865578492559, 'f1_fake': 0.6236559139784946, 'recall': 0.7602379436574884, 'recall_real': 0.9262135922330097, 'recall_fake': 0.5942622950819673, 'precision': 0.7810457516339869, 'precision_real': 0.905982905982906, 'precision_fake': 0.6561085972850679, 'acc': 0.8626373626373627}
+
+---------- epoch 7 ----------
+----- in val progress... -----
+current {'auc': 0.8128402037243354, 'spauc': 0.7153136701374637, 'metric': 0.7491228070175439, 'f1_real': 0.9172932330827068, 'f1_fake': 0.5809523809523809, 'recall': 0.7237864077669902, 'recall_real': 0.9475728155339805, 'recall_fake': 0.5, 'precision': 0.7910353535353536, 'precision_real': 0.8888888888888888, 'precision_fake': 0.6931818181818182, 'acc': 0.8618524332810047}
+Max {'auc': 0.8557257679452491, 'spauc': 0.7324023890699214, 'metric': 0.7698212359138752, 'f1_real': 0.9159865578492559, 'f1_fake': 0.6236559139784946, 'recall': 0.7602379436574884, 'recall_real': 0.9262135922330097, 'recall_fake': 0.5942622950819673, 'precision': 0.7810457516339869, 'precision_real': 0.905982905982906, 'precision_fake': 0.6561085972850679, 'acc': 0.8626373626373627}
+
+---------- epoch 8 ----------
+----- in val progress... -----
+current {'auc': 0.8272560878561197, 'spauc': 0.7107692436566508, 'metric': 0.7417886039366659, 'f1_real': 0.9102137767220904, 'f1_fake': 0.5733634311512416, 'recall': 0.7252944453286647, 'recall_real': 0.9300970873786408, 'recall_fake': 0.5204918032786885, 'precision': 0.7646768727357719, 'precision_real': 0.8911627906976745, 'precision_fake': 0.6381909547738693, 'acc': 0.8516483516483516}
+Max {'auc': 0.8557257679452491, 'spauc': 0.7324023890699214, 'metric': 0.7698212359138752, 'f1_real': 0.9159865578492559, 'f1_fake': 0.6236559139784946, 'recall': 0.7602379436574884, 'recall_real': 0.9262135922330097, 'recall_fake': 0.5942622950819673, 'precision': 0.7810457516339869, 'precision_real': 0.905982905982906, 'precision_fake': 0.6561085972850679, 'acc': 0.8626373626373627}
+
+---------- epoch 9 ----------
+----- in val progress... -----
+current {'auc': 0.819950660512494, 'spauc': 0.7089263425953073, 'metric': 0.7271137026239067, 'f1_real': 0.8950437317784256, 'f1_fake': 0.5591836734693878, 'recall': 0.7278250835588095, 'recall_real': 0.8941747572815534, 'recall_fake': 0.5614754098360656, 'precision': 0.7264124829964254, 'precision_real': 0.8959143968871596, 'precision_fake': 0.556910569105691, 'acc': 0.8304552590266876}
+Max {'auc': 0.8557257679452491, 'spauc': 0.7324023890699214, 'metric': 0.7698212359138752, 'f1_real': 0.9159865578492559, 'f1_fake': 0.6236559139784946, 'recall': 0.7602379436574884, 'recall_real': 0.9262135922330097, 'recall_fake': 0.5942622950819673, 'precision': 0.7810457516339869, 'precision_real': 0.905982905982906, 'precision_fake': 0.6561085972850679, 'acc': 0.8626373626373627}
+
+test results: {'auc': 0.8578892895299144, 'spauc': 0.7463705086032388, 'metric': 0.7734994242646289, 'f1_real': 0.9160975609756098, 'f1_fake': 0.630901287553648, 'recall': 0.7725986578525641, 'recall_real': 0.9169921875, 'recall_fake': 0.6282051282051282, 'precision': 0.7744126840088728, 'precision_real': 0.9152046783625731, 'precision_fake': 0.6336206896551724, 'acc': 0.863275039745628}
+best model path: ./param_model/ARG_测试种子_en我/1/parameter_bert.pkl
+best macro f1: 0.7698212359138752
+best_val_metric: {'auc': 0.8557257679452491, 'spauc': 0.7324023890699214, 'metric': 0.7698212359138752, 'f1_real': 0.9159865578492559, 'f1_fake': 0.6236559139784946, 'recall': 0.7602379436574884, 'recall_real': 0.9262135922330097, 'recall_fake': 0.5942622950819673, 'precision': 0.7810457516339869, 'precision_real': 0.905982905982906, 'precision_fake': 0.6561085972850679, 'acc': 0.8626373626373627}
+the_test_metric: {'auc': 0.8578892895299144, 'spauc': 0.7463705086032388, 'metric': 0.7734994242646289, 'f1_real': 0.9160975609756098, 'f1_fake': 0.630901287553648, 'recall': 0.7725986578525641, 'recall_real': 0.9169921875, 'recall_fake': 0.6282051282051282, 'precision': 0.7744126840088728, 'precision_real': 0.9152046783625731, 'precision_fake': 0.6336206896551724, 'acc': 0.863275039745628}
+lr: 5e-05; model name: ARG; batchsize: 64; epoch: 50; gpu: 0;
+data_type: rationale; data_path: /home/tzh/ARG/data我/en; data_name: 测试种子_en我;
+before in config
+{'use_cuda': True, 'seed': 3, 'batchsize': 64, 'max_len': 170, 'early_stop': 5, 'language': 'en', 'root_path': '/home/tzh/ARG/data我/en', 'weight_decay': 5e-05, 'model': {'mlp': {'dims': [384], 'dropout': 0.2}, 'llm_judgment_predictor_weight': 1.0, 'rationale_usefulness_evaluator_weight': 1.5, 'kd_loss_weight': 1}, 'emb_dim': 768, 'co_attention_dim': 300, 'lr': 5e-05, 'epoch': 50, 'model_name': 'ARG', 'save_log_dir': './logs', 'save_param_dir': './param_model', 'param_log_dir': './logs/param', 'tensorboard_dir': './logs/tensorlog', 'bert_path': '/home/tzh/model/bert-base-uncased', 'data_type': 'rationale', 'data_name': '测试种子_en我', 'eval_mode': False, 'teacher_path': None, 'month': 1, 'eval_model_path': ''}
+{'lr': [5e-05]}
+保存模型参数的目录：./param_model/ARG_测试种子_en我/1
+
+
+
+==================== start training ====================
+time cost in model and data loading: 70.02243256568909s
+---------- epoch 0 ----------
+----- in val progress... -----
+current {'auc': 0.7938484800254656, 'spauc': 0.6889476197257428, 'metric': 0.4470486111111111, 'f1_real': 0.8940972222222222, 'f1_fake': 0.0, 'recall': 0.5, 'recall_real': 1.0, 'recall_fake': 0.0, 'precision': 0.4042386185243328, 'precision_real': 0.8084772370486656, 'precision_fake': 0.0, 'acc': 0.8084772370486656}
+Max {'auc': 0.7938484800254656, 'spauc': 0.6889476197257428, 'metric': 0.4470486111111111, 'f1_real': 0.8940972222222222, 'f1_fake': 0.0, 'recall': 0.5, 'recall_real': 1.0, 'recall_fake': 0.0, 'precision': 0.4042386185243328, 'precision_real': 0.8084772370486656, 'precision_fake': 0.0, 'acc': 0.8084772370486656}
+
+---------- epoch 1 ----------
+----- in val progress... -----
+current {'auc': 0.8508475250676428, 'spauc': 0.688801025323136, 'metric': 0.7459950944253569, 'f1_real': 0.9198508853681268, 'f1_fake': 0.5721393034825871, 'recall': 0.714781951297151, 'recall_real': 0.958252427184466, 'recall_fake': 0.4713114754098361, 'precision': 0.8061283517081802, 'precision_real': 0.8844086021505376, 'precision_fake': 0.7278481012658228, 'acc': 0.8649921507064364}
+Max {'auc': 0.8508475250676428, 'spauc': 0.688801025323136, 'metric': 0.7459950944253569, 'f1_real': 0.9198508853681268, 'f1_fake': 0.5721393034825871, 'recall': 0.714781951297151, 'recall_real': 0.958252427184466, 'recall_fake': 0.4713114754098361, 'precision': 0.8061283517081802, 'precision_real': 0.8844086021505376, 'precision_fake': 0.7278481012658228, 'acc': 0.8649921507064364}
+
+---------- epoch 2 ----------
+----- in val progress... -----
+current {'auc': 0.856891612287124, 'spauc': 0.7347897836266617, 'metric': 0.7612367893541072, 'f1_real': 0.9192253188474256, 'f1_fake': 0.6032482598607888, 'recall': 0.7387235397103296, 'recall_real': 0.9446601941747573, 'recall_fake': 0.5327868852459017, 'precision': 0.7951556804037999, 'precision_real': 0.8951241950321988, 'precision_fake': 0.6951871657754011, 'acc': 0.8657770800627943}
+Max {'auc': 0.856891612287124, 'spauc': 0.7347897836266617, 'metric': 0.7612367893541072, 'f1_real': 0.9192253188474256, 'f1_fake': 0.6032482598607888, 'recall': 0.7387235397103296, 'recall_real': 0.9446601941747573, 'recall_fake': 0.5327868852459017, 'precision': 0.7951556804037999, 'precision_real': 0.8951241950321988, 'precision_fake': 0.6951871657754011, 'acc': 0.8657770800627943}
+
+---------- epoch 3 ----------
+----- in val progress... -----
+current {'auc': 0.8606756326595577, 'spauc': 0.7373447146435242, 'metric': 0.7724657964120918, 'f1_real': 0.91445142580957, 'f1_fake': 0.6304801670146137, 'recall': 0.7686495304790705, 'recall_real': 0.9184466019417475, 'recall_fake': 0.6188524590163934, 'precision': 0.7765220240411197, 'precision_real': 0.9104908565928778, 'precision_fake': 0.6425531914893617, 'acc': 0.8610675039246468}
+Max {'auc': 0.8606756326595577, 'spauc': 0.7373447146435242, 'metric': 0.7724657964120918, 'f1_real': 0.91445142580957, 'f1_fake': 0.6304801670146137, 'recall': 0.7686495304790705, 'recall_real': 0.9184466019417475, 'recall_fake': 0.6188524590163934, 'precision': 0.7765220240411197, 'precision_real': 0.9104908565928778, 'precision_fake': 0.6425531914893617, 'acc': 0.8610675039246468}
+
+---------- epoch 4 ----------
+----- in val progress... -----
+current {'auc': 0.8618613719560719, 'spauc': 0.7411561691113029, 'metric': 0.7684087515419074, 'f1_real': 0.9203791469194312, 'f1_fake': 0.6164383561643835, 'recall': 0.7479985675632659, 'recall_real': 0.9427184466019417, 'recall_fake': 0.5532786885245902, 'precision': 0.7974751813669338, 'precision_real': 0.899074074074074, 'precision_fake': 0.6958762886597938, 'acc': 0.8681318681318682}
+Max {'auc': 0.8606756326595577, 'spauc': 0.7373447146435242, 'metric': 0.7724657964120918, 'f1_real': 0.91445142580957, 'f1_fake': 0.6304801670146137, 'recall': 0.7686495304790705, 'recall_real': 0.9184466019417475, 'recall_fake': 0.6188524590163934, 'precision': 0.7765220240411197, 'precision_real': 0.9104908565928778, 'precision_fake': 0.6425531914893617, 'acc': 0.8610675039246468}
+
+---------- epoch 5 ----------
+----- in val progress... -----
+current {'auc': 0.8435699506605124, 'spauc': 0.7353971032946045, 'metric': 0.7585970137275795, 'f1_real': 0.9200376293508936, 'f1_fake': 0.5971563981042655, 'recall': 0.7329540028648736, 'recall_real': 0.9495145631067962, 'recall_fake': 0.5163934426229508, 'precision': 0.8001004674813417, 'precision_real': 0.8923357664233577, 'precision_fake': 0.7078651685393258, 'acc': 0.8665620094191523}
+Max {'auc': 0.8606756326595577, 'spauc': 0.7373447146435242, 'metric': 0.7724657964120918, 'f1_real': 0.91445142580957, 'f1_fake': 0.6304801670146137, 'recall': 0.7686495304790705, 'recall_real': 0.9184466019417475, 'recall_fake': 0.6188524590163934, 'precision': 0.7765220240411197, 'precision_real': 0.9104908565928778, 'precision_fake': 0.6425531914893617, 'acc': 0.8610675039246468}
+
+---------- epoch 6 ----------
+----- in val progress... -----
+current {'auc': 0.8315255451217574, 'spauc': 0.7284652822570512, 'metric': 0.7577093651216991, 'f1_real': 0.9206945096198969, 'f1_fake': 0.5947242206235012, 'recall': 0.7303119528887474, 'recall_real': 0.9524271844660194, 'recall_fake': 0.5081967213114754, 'precision': 0.8038855900836339, 'precision_real': 0.8910081743869209, 'precision_fake': 0.7167630057803468, 'acc': 0.8673469387755102}
+Max {'auc': 0.8606756326595577, 'spauc': 0.7373447146435242, 'metric': 0.7724657964120918, 'f1_real': 0.91445142580957, 'f1_fake': 0.6304801670146137, 'recall': 0.7686495304790705, 'recall_real': 0.9184466019417475, 'recall_fake': 0.6188524590163934, 'precision': 0.7765220240411197, 'precision_real': 0.9104908565928778, 'precision_fake': 0.6425531914893617, 'acc': 0.8610675039246468}
+
+---------- epoch 7 ----------
+----- in val progress... -----
+current {'auc': 0.8482293490370842, 'spauc': 0.7311458656190053, 'metric': 0.7729655160846667, 'f1_real': 0.9187380497131931, 'f1_fake': 0.6271929824561404, 'recall': 0.7595376412541779, 'recall_real': 0.933009708737864, 'recall_fake': 0.5860655737704918, 'precision': 0.7897123618661834, 'precision_real': 0.9048964218455744, 'precision_fake': 0.6745283018867925, 'acc': 0.8665620094191523}
+Max {'auc': 0.8482293490370842, 'spauc': 0.7311458656190053, 'metric': 0.7729655160846667, 'f1_real': 0.9187380497131931, 'f1_fake': 0.6271929824561404, 'recall': 0.7595376412541779, 'recall_real': 0.933009708737864, 'recall_fake': 0.5860655737704918, 'precision': 0.7897123618661834, 'precision_real': 0.9048964218455744, 'precision_fake': 0.6745283018867925, 'acc': 0.8665620094191523}
+
+---------- epoch 8 ----------
+----- in val progress... -----
+current {'auc': 0.8338532548145791, 'spauc': 0.7242978128115131, 'metric': 0.7280612244897959, 'f1_real': 0.8744897959183674, 'f1_fake': 0.5816326530612245, 'recall': 0.766429253541302, 'recall_real': 0.8320388349514564, 'recall_fake': 0.7008196721311475, 'precision': 0.70929919979995, 'precision_real': 0.921505376344086, 'precision_fake': 0.49709302325581395, 'acc': 0.8069073783359497}
+Max {'auc': 0.8482293490370842, 'spauc': 0.7311458656190053, 'metric': 0.7729655160846667, 'f1_real': 0.9187380497131931, 'f1_fake': 0.6271929824561404, 'recall': 0.7595376412541779, 'recall_real': 0.933009708737864, 'recall_fake': 0.5860655737704918, 'precision': 0.7897123618661834, 'precision_real': 0.9048964218455744, 'precision_fake': 0.6745283018867925, 'acc': 0.8665620094191523}
+
+---------- epoch 9 ----------
+----- in val progress... -----
+current {'auc': 0.8027057138309726, 'spauc': 0.7200884592509446, 'metric': 0.7551074987986042, 'f1_real': 0.9119617224880382, 'f1_fake': 0.5982532751091703, 'recall': 0.7433590641413338, 'recall_real': 0.925242718446602, 'recall_fake': 0.5614754098360656, 'precision': 0.7696217598307177, 'precision_real': 0.8990566037735849, 'precision_fake': 0.6401869158878505, 'acc': 0.8555729984301413}
+Max {'auc': 0.8482293490370842, 'spauc': 0.7311458656190053, 'metric': 0.7729655160846667, 'f1_real': 0.9187380497131931, 'f1_fake': 0.6271929824561404, 'recall': 0.7595376412541779, 'recall_real': 0.933009708737864, 'recall_fake': 0.5860655737704918, 'precision': 0.7897123618661834, 'precision_real': 0.9048964218455744, 'precision_fake': 0.6745283018867925, 'acc': 0.8665620094191523}
+
+---------- epoch 10 ----------
+----- in val progress... -----
+current {'auc': 0.7993673404424638, 'spauc': 0.7073138041666318, 'metric': 0.7406569194477374, 'f1_real': 0.9010669253152279, 'f1_fake': 0.5802469135802468, 'recall': 0.7399053000159159, 'recall_real': 0.9019417475728155, 'recall_fake': 0.5778688524590164, 'precision': 0.741419213274393, 'precision_real': 0.9001937984496124, 'precision_fake': 0.5826446280991735, 'acc': 0.8398744113029827}
+Max {'auc': 0.8482293490370842, 'spauc': 0.7311458656190053, 'metric': 0.7729655160846667, 'f1_real': 0.9187380497131931, 'f1_fake': 0.6271929824561404, 'recall': 0.7595376412541779, 'recall_real': 0.933009708737864, 'recall_fake': 0.5860655737704918, 'precision': 0.7897123618661834, 'precision_real': 0.9048964218455744, 'precision_fake': 0.6745283018867925, 'acc': 0.8665620094191523}
+
+---------- epoch 11 ----------
+----- in val progress... -----
+current {'auc': 0.8281394238421136, 'spauc': 0.7005914037042311, 'metric': 0.7273356180137489, 'f1_real': 0.8782213239009601, 'f1_fake': 0.5764499121265377, 'recall': 0.7579102339646666, 'recall_real': 0.8436893203883495, 'recall_fake': 0.6721311475409836, 'precision': 0.7101580611169652, 'precision_real': 0.9157007376185459, 'precision_fake': 0.5046153846153846, 'acc': 0.8108320251177394}
+Max {'auc': 0.8482293490370842, 'spauc': 0.7311458656190053, 'metric': 0.7729655160846667, 'f1_real': 0.9187380497131931, 'f1_fake': 0.6271929824561404, 'recall': 0.7595376412541779, 'recall_real': 0.933009708737864, 'recall_fake': 0.5860655737704918, 'precision': 0.7897123618661834, 'precision_real': 0.9048964218455744, 'precision_fake': 0.6745283018867925, 'acc': 0.8665620094191523}
+
+---------- epoch 12 ----------
+----- in val progress... -----
+current {'auc': 0.7708996498487983, 'spauc': 0.7016280355512369, 'metric': 0.7156847765594629, 'f1_real': 0.8801591248135255, 'f1_fake': 0.5512104283054003, 'recall': 0.732890339010027, 'recall_real': 0.8592233009708737, 'recall_fake': 0.6065573770491803, 'precision': 0.7036300633538946, 'precision_real': 0.9021406727828746, 'precision_fake': 0.5051194539249146, 'acc': 0.8108320251177394}
+Max {'auc': 0.8482293490370842, 'spauc': 0.7311458656190053, 'metric': 0.7729655160846667, 'f1_real': 0.9187380497131931, 'f1_fake': 0.6271929824561404, 'recall': 0.7595376412541779, 'recall_real': 0.933009708737864, 'recall_fake': 0.5860655737704918, 'precision': 0.7897123618661834, 'precision_real': 0.9048964218455744, 'precision_fake': 0.6745283018867925, 'acc': 0.8665620094191523}
+
+test results: {'auc': 0.8415923811431624, 'spauc': 0.7420170518443545, 'metric': 0.7657476442313256, 'f1_real': 0.9137847053093033, 'f1_fake': 0.6177105831533477, 'recall': 0.7635633680555556, 'recall_real': 0.916015625, 'recall_fake': 0.6111111111111112, 'precision': 0.7680093871609779, 'precision_real': 0.9115646258503401, 'precision_fake': 0.6244541484716157, 'acc': 0.8593004769475358}
+best model path: ./param_model/ARG_测试种子_en我/1/parameter_bert.pkl
+best macro f1: 0.7729655160846667
+best_val_metric: {'auc': 0.8482293490370842, 'spauc': 0.7311458656190053, 'metric': 0.7729655160846667, 'f1_real': 0.9187380497131931, 'f1_fake': 0.6271929824561404, 'recall': 0.7595376412541779, 'recall_real': 0.933009708737864, 'recall_fake': 0.5860655737704918, 'precision': 0.7897123618661834, 'precision_real': 0.9048964218455744, 'precision_fake': 0.6745283018867925, 'acc': 0.8665620094191523}
+the_test_metric: {'auc': 0.8415923811431624, 'spauc': 0.7420170518443545, 'metric': 0.7657476442313256, 'f1_real': 0.9137847053093033, 'f1_fake': 0.6177105831533477, 'recall': 0.7635633680555556, 'recall_real': 0.916015625, 'recall_fake': 0.6111111111111112, 'precision': 0.7680093871609779, 'precision_real': 0.9115646258503401, 'precision_fake': 0.6244541484716157, 'acc': 0.8593004769475358}
+lr: 5e-05; model name: ARG; batchsize: 64; epoch: 50; gpu: 0;
+data_type: rationale; data_path: /home/tzh/ARG/data我/en; data_name: 测试种子_en我;
+before in config
+{'use_cuda': True, 'seed': 4, 'batchsize': 64, 'max_len': 170, 'early_stop': 5, 'language': 'en', 'root_path': '/home/tzh/ARG/data我/en', 'weight_decay': 5e-05, 'model': {'mlp': {'dims': [384], 'dropout': 0.2}, 'llm_judgment_predictor_weight': 1.0, 'rationale_usefulness_evaluator_weight': 1.5, 'kd_loss_weight': 1}, 'emb_dim': 768, 'co_attention_dim': 300, 'lr': 5e-05, 'epoch': 50, 'model_name': 'ARG', 'save_log_dir': './logs', 'save_param_dir': './param_model', 'param_log_dir': './logs/param', 'tensorboard_dir': './logs/tensorlog', 'bert_path': '/home/tzh/model/bert-base-uncased', 'data_type': 'rationale', 'data_name': '测试种子_en我', 'eval_mode': False, 'teacher_path': None, 'month': 1, 'eval_model_path': ''}
+{'lr': [5e-05]}
+保存模型参数的目录：./param_model/ARG_测试种子_en我/1
+
+
+
+==================== start training ====================
+time cost in model and data loading: 68.3702654838562s
+---------- epoch 0 ----------
+----- in val progress... -----
+current {'auc': 0.8179452490848321, 'spauc': 0.7024343047655747, 'metric': 0.4470486111111111, 'f1_real': 0.8940972222222222, 'f1_fake': 0.0, 'recall': 0.5, 'recall_real': 1.0, 'recall_fake': 0.0, 'precision': 0.4042386185243328, 'precision_real': 0.8084772370486656, 'precision_fake': 0.0, 'acc': 0.8084772370486656}
+Max {'auc': 0.8179452490848321, 'spauc': 0.7024343047655747, 'metric': 0.4470486111111111, 'f1_real': 0.8940972222222222, 'f1_fake': 0.0, 'recall': 0.5, 'recall_real': 1.0, 'recall_fake': 0.0, 'precision': 0.4042386185243328, 'precision_real': 0.8084772370486656, 'precision_fake': 0.0, 'acc': 0.8084772370486656}
+
+---------- epoch 1 ----------
+----- in val progress... -----
+current {'auc': 0.8442901480184625, 'spauc': 0.7149157710446736, 'metric': 0.7307333085374564, 'f1_real': 0.916937354988399, 'f1_fake': 0.5445292620865139, 'recall': 0.6988739455674041, 'recall_real': 0.9592233009708738, 'recall_fake': 0.4385245901639344, 'precision': 0.7981715137956749, 'precision_real': 0.8782222222222222, 'precision_fake': 0.7181208053691275, 'acc': 0.859497645211931}
+Max {'auc': 0.8442901480184625, 'spauc': 0.7149157710446736, 'metric': 0.7307333085374564, 'f1_real': 0.916937354988399, 'f1_fake': 0.5445292620865139, 'recall': 0.6988739455674041, 'recall_real': 0.9592233009708738, 'recall_fake': 0.4385245901639344, 'precision': 0.7981715137956749, 'precision_real': 0.8782222222222222, 'precision_fake': 0.7181208053691275, 'acc': 0.859497645211931}
+
+---------- epoch 2 ----------
+----- in val progress... -----
+current {'auc': 0.8627327709692822, 'spauc': 0.7347688415691465, 'metric': 0.7595600954585707, 'f1_real': 0.92054536906441, 'f1_fake': 0.5985748218527315, 'recall': 0.7334394397580773, 'recall_real': 0.9504854368932039, 'recall_fake': 0.5163934426229508, 'precision': 0.8021491587225561, 'precision_real': 0.8924339106654512, 'precision_fake': 0.711864406779661, 'acc': 0.8673469387755102}
+Max {'auc': 0.8627327709692822, 'spauc': 0.7347688415691465, 'metric': 0.7595600954585707, 'f1_real': 0.92054536906441, 'f1_fake': 0.5985748218527315, 'recall': 0.7334394397580773, 'recall_real': 0.9504854368932039, 'recall_fake': 0.5163934426229508, 'precision': 0.8021491587225561, 'precision_real': 0.8924339106654512, 'precision_fake': 0.711864406779661, 'acc': 0.8673469387755102}
+
+---------- epoch 3 ----------
+----- in val progress... -----
+current {'auc': 0.857774948273118, 'spauc': 0.7362138435376999, 'metric': 0.7587981606300969, 'f1_real': 0.9240801117838845, 'f1_fake': 0.5935162094763093, 'recall': 0.7254058570746459, 'recall_real': 0.9631067961165048, 'recall_fake': 0.48770491803278687, 'precision': 0.8230274449874265, 'precision_real': 0.8880931065353626, 'precision_fake': 0.7579617834394905, 'acc': 0.8720565149136578}
+Max {'auc': 0.8627327709692822, 'spauc': 0.7347688415691465, 'metric': 0.7595600954585707, 'f1_real': 0.92054536906441, 'f1_fake': 0.5985748218527315, 'recall': 0.7334394397580773, 'recall_real': 0.9504854368932039, 'recall_fake': 0.5163934426229508, 'precision': 0.8021491587225561, 'precision_real': 0.8924339106654512, 'precision_fake': 0.711864406779661, 'acc': 0.8673469387755102}
+
+---------- epoch 4 ----------
+----- in val progress... -----
+current {'auc': 0.8606079898137833, 'spauc': 0.7345175368789634, 'metric': 0.7751214771622935, 'f1_real': 0.913508260447036, 'f1_fake': 0.636734693877551, 'recall': 0.7759828107591915, 'recall_real': 0.912621359223301, 'recall_fake': 0.639344262295082, 'precision': 0.7742716143114738, 'precision_real': 0.914396887159533, 'precision_fake': 0.6341463414634146, 'acc': 0.8602825745682888}
+Max {'auc': 0.8606079898137833, 'spauc': 0.7345175368789634, 'metric': 0.7751214771622935, 'f1_real': 0.913508260447036, 'f1_fake': 0.636734693877551, 'recall': 0.7759828107591915, 'recall_real': 0.912621359223301, 'recall_fake': 0.639344262295082, 'precision': 0.7742716143114738, 'precision_real': 0.914396887159533, 'precision_fake': 0.6341463414634146, 'acc': 0.8602825745682888}
+
+---------- epoch 5 ----------
+----- in val progress... -----
+current {'auc': 0.8489256724494668, 'spauc': 0.7368002211481274, 'metric': 0.763506875116019, 'f1_real': 0.9231490159325211, 'f1_fake': 0.6038647342995169, 'recall': 0.7343028807894318, 'recall_real': 0.9563106796116505, 'recall_fake': 0.5122950819672131, 'precision': 0.8137521312872975, 'precision_real': 0.8922101449275363, 'precision_fake': 0.7352941176470589, 'acc': 0.8712715855572999}
+Max {'auc': 0.8606079898137833, 'spauc': 0.7345175368789634, 'metric': 0.7751214771622935, 'f1_real': 0.913508260447036, 'f1_fake': 0.636734693877551, 'recall': 0.7759828107591915, 'recall_real': 0.912621359223301, 'recall_fake': 0.639344262295082, 'precision': 0.7742716143114738, 'precision_real': 0.914396887159533, 'precision_fake': 0.6341463414634146, 'acc': 0.8602825745682888}
+
+---------- epoch 6 ----------
+----- in val progress... -----
+current {'auc': 0.8656613082922171, 'spauc': 0.7379310922539517, 'metric': 0.7731926411171695, 'f1_real': 0.9143686502177067, 'f1_fake': 0.632016632016632, 'recall': 0.7702132739137355, 'recall_real': 0.9174757281553398, 'recall_fake': 0.6229508196721312, 'precision': 0.7763163783878357, 'precision_real': 0.9112825458052073, 'precision_fake': 0.6413502109704642, 'acc': 0.8610675039246468}
+Max {'auc': 0.8606079898137833, 'spauc': 0.7345175368789634, 'metric': 0.7751214771622935, 'f1_real': 0.913508260447036, 'f1_fake': 0.636734693877551, 'recall': 0.7759828107591915, 'recall_real': 0.912621359223301, 'recall_fake': 0.639344262295082, 'precision': 0.7742716143114738, 'precision_real': 0.914396887159533, 'precision_fake': 0.6341463414634146, 'acc': 0.8602825745682888}
+
+---------- epoch 7 ----------
+----- in val progress... -----
+current {'auc': 0.8331688683749802, 'spauc': 0.7343081163038107, 'metric': 0.7713452937333534, 'f1_real': 0.9158249158249159, 'f1_fake': 0.626865671641791, 'recall': 0.7633654305268184, 'recall_real': 0.9242718446601942, 'recall_fake': 0.6024590163934426, 'precision': 0.7804321576104226, 'precision_real': 0.9075309818875119, 'precision_fake': 0.6533333333333333, 'acc': 0.8626373626373627}
+Max {'auc': 0.8606079898137833, 'spauc': 0.7345175368789634, 'metric': 0.7751214771622935, 'f1_real': 0.913508260447036, 'f1_fake': 0.636734693877551, 'recall': 0.7759828107591915, 'recall_real': 0.912621359223301, 'recall_fake': 0.639344262295082, 'precision': 0.7742716143114738, 'precision_real': 0.914396887159533, 'precision_fake': 0.6341463414634146, 'acc': 0.8602825745682888}
+
+---------- epoch 8 ----------
+----- in val progress... -----
+current {'auc': 0.8361809645074009, 'spauc': 0.7316484749993718, 'metric': 0.7517980725234501, 'f1_real': 0.8901209677419355, 'f1_fake': 0.6134751773049646, 'recall': 0.7831489734203405, 'recall_real': 0.8572815533980582, 'recall_fake': 0.7090163934426229, 'precision': 0.7331007599580712, 'precision_real': 0.9255765199161425, 'precision_fake': 0.540625, 'acc': 0.8288854003139717}
+Max {'auc': 0.8606079898137833, 'spauc': 0.7345175368789634, 'metric': 0.7751214771622935, 'f1_real': 0.913508260447036, 'f1_fake': 0.636734693877551, 'recall': 0.7759828107591915, 'recall_real': 0.912621359223301, 'recall_fake': 0.639344262295082, 'precision': 0.7742716143114738, 'precision_real': 0.914396887159533, 'precision_fake': 0.6341463414634146, 'acc': 0.8602825745682888}
+
+---------- epoch 9 ----------
+----- in val progress... -----
+current {'auc': 0.8392010186216776, 'spauc': 0.7262244821029177, 'metric': 0.7592462283403177, 'f1_real': 0.9019221291276491, 'f1_fake': 0.6165703275529864, 'recall': 0.7720436097405698, 'recall_real': 0.8883495145631068, 'recall_fake': 0.6557377049180327, 'precision': 0.7488670488670488, 'precision_real': 0.9159159159159159, 'precision_fake': 0.5818181818181818, 'acc': 0.8437990580847724}
+Max {'auc': 0.8606079898137833, 'spauc': 0.7345175368789634, 'metric': 0.7751214771622935, 'f1_real': 0.913508260447036, 'f1_fake': 0.636734693877551, 'recall': 0.7759828107591915, 'recall_real': 0.912621359223301, 'recall_fake': 0.639344262295082, 'precision': 0.7742716143114738, 'precision_real': 0.914396887159533, 'precision_fake': 0.6341463414634146, 'acc': 0.8602825745682888}
+
+test results: {'auc': 0.8643287593482906, 'spauc': 0.7375098403058931, 'metric': 0.7730300634515195, 'f1_real': 0.9123152709359607, 'f1_fake': 0.6337448559670783, 'recall': 0.781208266559829, 'recall_real': 0.904296875, 'recall_fake': 0.6581196581196581, 'precision': 0.7657941241440247, 'precision_real': 0.9204771371769384, 'precision_fake': 0.6111111111111112, 'acc': 0.8585055643879174}
+best model path: ./param_model/ARG_测试种子_en我/1/parameter_bert.pkl
+best macro f1: 0.7751214771622935
+best_val_metric: {'auc': 0.8606079898137833, 'spauc': 0.7345175368789634, 'metric': 0.7751214771622935, 'f1_real': 0.913508260447036, 'f1_fake': 0.636734693877551, 'recall': 0.7759828107591915, 'recall_real': 0.912621359223301, 'recall_fake': 0.639344262295082, 'precision': 0.7742716143114738, 'precision_real': 0.914396887159533, 'precision_fake': 0.6341463414634146, 'acc': 0.8602825745682888}
+the_test_metric: {'auc': 0.8643287593482906, 'spauc': 0.7375098403058931, 'metric': 0.7730300634515195, 'f1_real': 0.9123152709359607, 'f1_fake': 0.6337448559670783, 'recall': 0.781208266559829, 'recall_real': 0.904296875, 'recall_fake': 0.6581196581196581, 'precision': 0.7657941241440247, 'precision_real': 0.9204771371769384, 'precision_fake': 0.6111111111111112, 'acc': 0.8585055643879174}
