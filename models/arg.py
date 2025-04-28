@@ -207,6 +207,7 @@ class Trainer:
             self.save_param_dir = self.save_path
         else:
             self.save_param_dir = os.makedirs(self.save_path)
+        print(f"保存模型参数的目录：{self.save_path}")
 
     def train(self, logger=None):
         st_tm = time.time()
